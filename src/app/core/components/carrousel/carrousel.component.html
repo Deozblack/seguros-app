@@ -1,0 +1,29 @@
+
+<section class="carrousel animate__animated animate__fadeIn">
+    <div class="carrousel-container">
+        <div class="carrousel-head">
+            <h2 class="carrousel-title">{{carrousel.title}}</h2>
+            <p class="carrousel-description">{{carrousel.description}}</p>
+        </div>
+        <div class="carrousel-body">
+            <p-carousel [value]="carrousel.carrousel" [numVisible]="3" [numScroll]="1" [circular]="true" [responsiveOptions]="responsiveOptions">
+                <ng-template let-carrousel pTemplate="item">
+                    <div class="carrousel-item border-1 surface-border border-round m-2 text-center py-5 px-3">
+                        <div class="carrousel-content-image">
+                            <img src="{{Url}}{{ carrousel.image.data.attributes.url }}" [alt]="carrousel.name" class="carrousel-image" />
+                        </div>
+                        <div class="carrousel-content-info">
+                            <h4 class="info-title">{{ carrousel.title }}</h4>
+                            <h6 class="info-description">{{carrousel.description }}</h6>
+                        </div>
+                    </div>
+                </ng-template>
+            </p-carousel>
+        </div>
+        <div class="carrousel-footer">
+            <div class="carrousel-content-button">
+                <p-button routerLink="{{carrousel.button_url}}" label="{{carrousel.button_text}}" styleClass="p-button-raised p-button-text p-button-warning"></p-button>
+            </div>
+        </div>
+    </div>
+</section>

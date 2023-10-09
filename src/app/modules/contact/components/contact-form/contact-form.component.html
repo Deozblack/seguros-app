@@ -1,0 +1,49 @@
+<div class="form">
+    <div class="form-container">
+        <h2>Contáctanos</h2>
+
+        <form autocomplete="off" [formGroup]="contacForm" (ngSubmit)="sendEmail()">
+            <div class="form-container-inputs">
+                <div class="form-input">
+                    <span class="p-float-label">
+                        <input pInputText id="name" formControlName="name" />
+                        <label htmlFor="username" >Nombre completo</label>
+                    </span>
+                    <span class="text-error" appSetMessage *ngIf="this.contacForm.get('name')!.touched" [errors]="this.contacForm.get('name')!.errors"></span>
+                </div>
+                <div class="form-input">
+                    <span class="p-float-label">
+                        <input pInputText id="email" formControlName="email" />
+                        <label htmlFor="username">Email:</label>
+                    </span>
+                    <span class="text-error" appSetMessage *ngIf="this.contacForm.get('email')!.touched" [errors]="this.contacForm.get('email')!.errors"></span>
+                </div>
+                <div class="form-input">
+                    <span class="p-float-label">
+                        <p-inputNumber [style]="{'width':'100%'}" [useGrouping]="false" formControlName="phone" [minlength]="10" [maxlength]="10" mode="decimal"></p-inputNumber>
+                        <label htmlFor="number-input">Número de teléfono:</label>
+                    </span>
+                    <span class="text-error" appSetMessage *ngIf="this.contacForm.get('phone')!.touched" [errors]="this.contacForm.get('phone')!.errors"></span>
+                </div>
+                <div class="form-input">
+                    <span class="p-float-label">
+                        <p-multiSelect [selectionLimit]="1" [style]="{'width': '100%'}" [options]="services" optionLabel="service" formControlName="services"></p-multiSelect>
+                        <label for="ms-cities">Escoge un servicio:</label>
+                    </span>
+                    <span class="text-error" appSetMessage *ngIf="this.contacForm.get('services')!.touched" [errors]="this.contacForm.get('services')!.errors"></span>
+                </div>
+                <div class="form-input">
+                    <span class="p-float-label">
+                        <textarea [style]="{'width': '100%'}" id="float-input" rows="5" cols="30" pInputTextarea formControlName="comments"></textarea>
+                        <label for="float-input">Comentarios...</label>
+                    </span>
+                    <span class="text-error" appSetMessage *ngIf="this.contacForm.get('comments')!.touched" [errors]="this.contacForm.get('comments')!.errors"></span>
+                </div>
+
+                <div class="content-buttons">
+                    <p-button type="submit" label="Enviar" styleClass="p-button-raised p-button-text"></p-button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

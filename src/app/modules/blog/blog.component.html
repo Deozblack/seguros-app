@@ -1,0 +1,7 @@
+<div *ngIf="!components; else containerHome">
+    <app-loader></app-loader>
+</div>
+
+<ng-template #containerHome>
+    <div appComponentDynamic [componentsList]="components"></div>
+</ng-template>

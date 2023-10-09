@@ -1,0 +1,22 @@
+<div *ngIf="!blog; else containerBlog">
+    <app-loader></app-loader>
+</div>
+<ng-template #containerBlog>
+    <section class="hero animate__animated animate__fadeIn" style="background-image: url({{Url+blog.image.data.attributes.url}});">
+        <div class="hero-container">
+            <div class="hero-card">
+                <h1 class="hero-title">{{blog.title}}</h1>
+                <p class="hero-description">{{blog.description_preview}}</p>
+            </div>
+        </div>
+    </section>
+    
+    <div class="blog">
+        <div class="blog-container">
+            <div class="blog-editor">
+                <div class="editor" appSetHtml [htmlElements]="blog.editor"></div>
+            </div>
+        </div>
+    </div>
+    
+</ng-template>

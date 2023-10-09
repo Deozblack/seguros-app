@@ -1,0 +1,23 @@
+<section class="blog animate__animated animate__fadeIn">
+    <div class="blog-container">
+        <div class="blog-head">
+            <h3 class="title">{{blog.title}}</h3>
+            <p class="description">{{blog.description}}</p>
+        </div>
+        <div class="blog-body">
+            <div *ngFor="let blogItem of blog.relation_details.data" class="blog-card">
+                <div class="image-container">
+                    <img [src]="Url+blogItem.attributes.image.data.attributes.url" alt="">
+                </div>
+                <div class="info-container">
+                    <h4 class="title">{{blogItem.attributes.title}}</h4>
+                    <p class="description">{{blogItem.attributes.description_preview}}</p>
+                    <div class="content-buttons">
+                        <span class="date">Publicado: {{blogItem.attributes.createdAt | date}}</span>
+                        <p-button [routerLink]="urlLink+blogItem.id" label="Ver más" styleClass="p-button-raised p-button-text"></p-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

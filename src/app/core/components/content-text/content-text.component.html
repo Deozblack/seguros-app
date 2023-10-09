@@ -1,0 +1,10 @@
+<section class="content-text animate__animated animate__fadeIn">
+    <div class="content-text-container">
+        <h2>{{contentText.title}}</h2>
+        <p>{{contentText.description}}</p>
+
+        <div *ngIf="contentText.button_url" class="content-button">
+            <p-button [routerLink]="url" label="{{contentText.button_text}}" styleClass="p-button-raised p-button-text p-button-warning"></p-button>
+        </div>
+    </div>
+</section>

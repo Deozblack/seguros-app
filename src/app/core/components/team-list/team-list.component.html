@@ -1,0 +1,42 @@
+
+<section class="team-list animate__animated animate__fadeIn">
+    <div class="team-list-container">
+        <div class="team-list-head">
+            <h3 class="title">{{teamList.title}}</h3>
+        </div>
+        <div class="team-list-body">
+            <div class="list-body">
+                <div *ngFor="let worker of teamList.worker" class="card" (click)="openModal(worker)">
+                    <img class="image" src="{{Url+worker.image.data.attributes.url}}" alt="image empleado">
+                    <h4 class="name">{{worker.name}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<p-sidebar *ngIf="teamList.worker" [(visible)]="sidebarVisible" position="right" [style]="{'background-color': '#212121', 'color': 'white'}">
+    <div *ngIf="!workerCurrent; else containerModal">
+        loading...
+    </div>
+    <ng-template #containerModal>
+        <div class="modal">
+            <div class="modal-container">
+                <div class="modal-head">
+                    <img src="{{Url+workerCurrent.image.data.attributes.url}}" alt="Imagen empleado">
+                    <h2>{{workerCurrent.name}}</h2>
+                </div>
+                <div class="modal-body">
+                    <h3>Sobre mí:</h3>
+                    <p>{{workerCurrent.presentation}}</p>
+
+                    <div class="content-contact">
+                        <h4>Contáctame: {{workerCurrent.email}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+    
+</p-sidebar>
+

@@ -1,0 +1,48 @@
+.content-text{
+    padding: 60px 0px;
+    display: flex;
+    justify-content: center;
+    background-color: var(--surface-800);
+    color: white;
+
+    .content-text-container{
+        width: 60%;
+
+        h2{
+            font-size: 30px;
+            color: var(--orange-400);
+            text-align: center;
+        }
+
+        p{
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .content-button{
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width:500px) {
+    .content-text{
+        padding: 40px 0px;
+    
+        .content-text-container{
+            width: 100%;
+            padding: 10px;
+    
+            h2{
+                font-size: 25px;
+                color: var(--orange-400);
+                text-align: center;
+            }
+    
+            p{
+                font-size: 20px;
+                text-align: center;
+            }
+        }
+    }
+}

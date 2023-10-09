@@ -1,0 +1,19 @@
+<section class="content-aling animate__animated animate__fadeIn">
+    <div class="content-aling-container">
+        <div *ngIf="contentAlingText.aling_image === 'right'" class="content-aling-col-info">
+            <div class="col-info-content">
+                <h3 class="title">{{contentAlingText.title}}</h3>
+                <p class="description">{{contentAlingText.description}}</p>
+            </div>
+        </div>
+        <div class="content-aling-col-image">
+            <img [src]="Url+contentAlingText.image.data.attributes.url" alt="Image empleado">
+        </div>
+        <div *ngIf="contentAlingText.aling_image === 'left'" class="content-aling-col-info">
+            <div class="col-info-content">
+                <h3 class="title">{{contentAlingText.title}}</h3>
+                <p class="description">{{contentAlingText.description}}</p>
+            </div>
+        </div>
+    </div>
+</section>

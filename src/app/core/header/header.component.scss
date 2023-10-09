@@ -1,0 +1,8 @@
+.nav-image{
+    cursor: pointer;
+}
+:host ::ng-deep .p-menuitem-link-active {
+    background-color: var(--blue-200);
+    border-radius: 7px;
+}
+

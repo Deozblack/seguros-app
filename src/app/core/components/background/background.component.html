@@ -1,0 +1,19 @@
+<section class="background animate__animated animate__fadeIn">
+    <div class="background-container">
+        <div *ngIf="background.aling_image === 'right'" class="background-col-info">
+            <div class="col-info-content">
+                <h3 class="title">{{background.title}}</h3>
+                <p class="description">{{background.description}}</p>
+            </div>
+        </div>
+        <div class="background-col-image">
+            <img [src]="Url+background.image.data.attributes.url" alt="Image background">
+        </div>
+        <div *ngIf="background.aling_image === 'left'" class="background-col-info">
+            <div class="col-info-content">
+                <h3 class="title">{{background.title}}</h3>
+                <p class="description">{{background.description}}</p>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ComponentData } from '../../interfaces/response.interface';
 import { BackgroundInfo } from '../../interfaces/background.interface';
 import { environment } from 'src/app/environments/environment.prod';
 

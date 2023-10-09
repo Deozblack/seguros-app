@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ComponentData } from '../../interfaces/response.interface';
 import { ContentText } from '../../interfaces/content-text.interface';
 
 @Component({

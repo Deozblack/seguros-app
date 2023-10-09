@@ -9,6 +9,8 @@ import { RouterModule } from '@angular/router';
 import { HeaderModule } from './core/header/header.module';
 import { FooterModule } from './core/footer/footer.module';
 
+import {provideClientHydration} from '@angular/platform-browser';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -22,7 +24,7 @@ import { FooterModule } from './core/footer/footer.module';
     FooterModule,
     HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ provideClientHydration() ],  // add this line
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

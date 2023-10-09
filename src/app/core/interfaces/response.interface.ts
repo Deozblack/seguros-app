@@ -2,7 +2,6 @@
 
 export interface Response {
     data: ResponseData;
-    meta: Meta;
 }
 
 export interface ResponseData {
@@ -14,108 +13,6 @@ export interface PurpleAttributes {
     createdAt:   string;
     updatedAt:   string;
     publishedAt: string;
-    components:  ComponentData[];
+    components:  any[];
 }
 
-export interface ComponentData {
-    id:                number;
-    __component:       string;
-    title:             string;
-    description:       string;
-    image?:            Image;
-    button_text?:      string;
-    button_url?:       string;
-    carrousel?:        Carrousel[];
-    aling_image?:      string;
-    relation_details?: RelationDetails;
-}
-
-export interface Carrousel {
-    id:          number;
-    title:       string;
-    description: string;
-    image:       Image;
-}
-
-export interface Image {
-    data: ImageData;
-}
-
-export interface ImageData {
-    id:         number;
-    attributes: FluffyAttributes;
-}
-
-export interface FluffyAttributes {
-    name:              string;
-    alternativeText:   null;
-    caption:           null;
-    width:             number;
-    height:            number;
-    formats:           Formats;
-    hash:              string;
-    ext:               EXT;
-    mime:              MIME;
-    size:              number;
-    url:               string;
-    previewUrl:        null;
-    provider:          Provider;
-    provider_metadata: null;
-    createdAt:         string;
-    updatedAt:         string;
-}
-
-export enum EXT {
-    JPEG = ".jpeg",
-    Jpg = ".jpg",
-}
-
-export interface Formats {
-    thumbnail: Large;
-    small?:    Large;
-    medium?:   Large;
-    large?:    Large;
-}
-
-export interface Large {
-    name:   string;
-    hash:   string;
-    ext:    EXT;
-    mime:   MIME;
-    path:   null;
-    width:  number;
-    height: number;
-    size:   number;
-    url:    string;
-}
-
-export enum MIME {
-    ImageJPEG = "image/jpeg",
-}
-
-export enum Provider {
-    Local = "local",
-}
-
-export interface RelationDetails {
-    data: Datum[];
-}
-
-export interface Datum {
-    id:         number;
-    attributes: DatumAttributes;
-}
-
-export interface DatumAttributes {
-    title:               string;
-    createdAt:           string;
-    updatedAt:           string;
-    publishedAt:         string;
-    description_preview: string;
-    editor:              string;
-    uid:                 string;
-    image:               Image;
-}
-
-export interface Meta {
-}

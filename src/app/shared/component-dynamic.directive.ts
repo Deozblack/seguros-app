@@ -1,6 +1,5 @@
 import { Directive, Input, ViewContainerRef, inject } from '@angular/core';
 import { ComponentsService } from '../core/services/components.service';
-import { ComponentData } from '../core/interfaces/response.interface';
 import { HomeService } from '../core/services/home.service';
 
 @Directive({

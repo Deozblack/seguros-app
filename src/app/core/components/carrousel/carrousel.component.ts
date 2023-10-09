@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ComponentData } from '../../interfaces/response.interface';
 import { CarrouselInfo } from '../../interfaces/carrousel.interface';
 import { environment } from 'src/app/environments/environment.prod';
 

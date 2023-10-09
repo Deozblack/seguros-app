@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ComponentData } from '../../interfaces/response.interface';
 import { Hero } from '../../interfaces/hero.interfaces';
 import { environment } from 'src/app/environments/environment.prod';
 

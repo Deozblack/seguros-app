@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { ComponentData } from 'src/app/core/interfaces/response.interface';
 import { BlogService } from 'src/app/core/services/blog.service';
 
 @Component({

@@ -20,7 +20,7 @@
             "allowedCommonJsDependencies": [
               "sweetalert2"
            ],
-            "outputPath": "dist/insurances-frontend",
+            "outputPath": "dist/insurances-frontend/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -102,6 +102,61 @@
             ],
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/insurances-frontend/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "insurances-frontend:build:development",
+              "serverTarget": "insurances-frontend:server:development"
+            },
+            "production": {
+              "browserTarget": "insurances-frontend:build:production",
+              "serverTarget": "insurances-frontend:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "insurances-frontend:build:production",
+              "serverTarget": "insurances-frontend:server:production"
+            },
+            "development": {
+              "browserTarget": "insurances-frontend:build:development",
+              "serverTarget": "insurances-frontend:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

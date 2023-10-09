@@ -1,6 +1,5 @@
 import { Injectable, ViewContainerRef } from '@angular/core';
 import { HeroComponent } from '../components/hero/hero.component';
-import { ComponentData } from '../interfaces/response.interface';
 import { CarrouselComponent } from '../components/carrousel/carrousel.component';
 import { BackgroundComponent } from '../components/background/background.component';
 import { BlogInfoComponent } from '../components/blog-info/blog-info.component';
@@ -16,8 +15,9 @@ export class ComponentsService {
   constructor() { }
 
   generateComponents(viewContainerRef: ViewContainerRef, componentsList:any[]){
-
-    componentsList.forEach( data => {
+    let componentsArray: any[] = [];
+    componentsArray = componentsList;
+    componentsArray.forEach( data => {
   
       switch (data.__component) {
 

@@ -11,9 +11,6 @@ export class HomeComponent {
   private homeService = inject(HomeService);
   public components!:any[];
 
-  public html = `<h1>Hola Mundo doooos!!</h1>`
-  public title!:string;
-
   ngOnInit(): void {
     this.loadComponents();
   }
